@@ -14,7 +14,7 @@ userinput_urltarget = args.url
 
 target_url = requests.get(userinput_urltarget)
 soup = BeautifulSoup(target_url.content, "html.parser")
-target_data = 
+target_data = soup.find_all(#img)
 
 # url
 # path
