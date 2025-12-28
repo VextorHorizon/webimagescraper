@@ -4,7 +4,9 @@ import argparse #รับ input จาก user
 import os #เอารูปที่โหลดไปลง folder ที่เลือกไว้
 import pathlib #อันนี้ auto หา folder
 
-path = "C:\Users\copte\Desktop\Coding\roadtor15\webimagescraper\target_img" #Hardcode!
+path = "C:\Users\...\Desktop\Coding\roadtor15\webimagescraper\target_img" #Hardcode!
+if not os.path.exists(path):
+    os.makedirs(path)
 
 # parser = argparse.ArgumentParser()
 # parser.add_argument('--url', type=str)
@@ -17,7 +19,9 @@ path = "C:\Users\copte\Desktop\Coding\roadtor15\webimagescraper\target_img" #Har
 target_url = requests.get("https://ctmusicshop.com/product/cort-kx707-evertune-open-pore-black-electric-guitar/") #Hardcode!
 soup = BeautifulSoup(target_url.content, "html.parser")
 target_data = soup.find_all('img')
-print(target_data)
+
+
+# print(target_data)
 # url
 # path
 # bs4 หา type <img>
