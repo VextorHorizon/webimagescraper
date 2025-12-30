@@ -26,13 +26,21 @@ for img in imgs_in_targetweb: #loop วนดูใน list imgs_in_targetweb �
     elif 'webp' in img_url: webp_box.append(img_url) #แยก webp เข้า list กล่องชื่อ webp
     else: pass
 
-num = 0
-for webpimg in webp_box:
-    num += 1
-    imgurl = webpimg #อันนี้ไม่จำเป็นต้องมีแต่ breakdown ให้เข้าใจง่ายเฉยๆ
-    img_content = requests.get(img_url).content #ขอเนื้อหาจาก url รูป
-    with open(f'image_{num}.png', 'wb') as binaryimg:
-        binaryimg.write(img_content)
+#Download รูป
+for num, pngimage in enumerate(png_box, start=1): #enumerate ใช้นับเลข
+    img_data = requests.get(pngimage).content
+    with open(f"image_{num}.png", 'wb') as file_binary:
+        file_binary.write(img_data) #เขียน img_data ลงไปใน image_{num}.นามสกุลไฟล์
+
+for num, jpgimage in enumerate(jpg_box, start=1):
+    img_data = requests.get(jpgimage).content
+    with open(f"image_{num}.jpg", 'wb') as file_binary:
+        file_binary.write(img_data)
+
+for num, webpimage in enumerate(webp_box, start=1):
+    img_data = requests.get(webpimage).content
+    with open(f"image_{num}.webp", 'wb') as file_binary:
+        file_binary.write(img_data)
 
 
 # ระบุว่าเว็บที่เราต้องการให้ไปดึงรูปภาพคือเว็บอะไร /// input ของ user
