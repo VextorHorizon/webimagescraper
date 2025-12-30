@@ -9,4 +9,8 @@ A lightweight, CLI-based utility built with Python to automate the extraction an
 </ul>
 <h2>How to use</h2>
 <h3>1. Prerequisites</h3>
-<p>Ensure you have the necessary libraries installed:<br> `pip install requests beautifulsoup4` </p><br> 
+<p>Ensure you have the necessary libraries installed<br> 
+`pip install requests beautifulsoup4`  
+<h3>2. Usage</h3>
+Run the scraper by providing the target URL as an argument:<br>
+python main.py --url https://example.com/product-page
