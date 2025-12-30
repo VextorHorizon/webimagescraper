@@ -15,24 +15,6 @@ html_content = BeautifulSoup(url, "html.parser") #กำหนดกฎที่
 #หา tags img ในตัวของ content ที่ได้มา
 imgs_in_targetweb = html_content.find_all('img') #ได้ list ขอ ที่แปะแท็ค img ทั้งหมดในกล่อง html_content
 
-# imgs_purify = []
-# for image in imgs_in_targetweb:
-#     image_url = image['src'] #แยกทุกอย่างในแท็ก <img> ออก ให้เหลือแต่ไส้ในที่เราต้องการ ซึ่งคือ src มันมี image url อยู่
-#     if 'png' or 'jpg' or 'webp' in image_url: #เอา png jpg webp เท่านั้น ยัดลง imgs_purify
-#         imgs_purify.append(image_url)
-#     for img_num, image_in_purify in enumerate(imgs_purify, start=1):
-#         if 'png' in image_in_purify:
-#             img_data = requests.get(image_in_purify).content
-#             with open(f'image_{img_num}.png', 'wb') as imgbinary:
-#                 imgbinary.write(image_in_purify)
-#         elif 'jpg' in image_in_purify:
-#             img_data = requests.get(image_in_purify).content
-#             with open(f'image_{img_num}.jpg', 'wb') as imgbinary:
-#                 imgbinary.write(image_in_purify)
-#         elif 'webp' in image_in_purify:
-#             img_data = requests.get(image_in_purify).content
-#             with open(f'image_{img_num}.webp', 'wb') as imgbinary:
-#                 imgbinary.write(image_in_purify)
 
                 
 
